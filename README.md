@@ -1,7 +1,7 @@
 # README.md
-
 ## author: Bishr Tabbaa
-## description: run_analysis.R contains several functions and scripts to fulfill the Week4 Assignment requirements:
+
+description: run_analysis.R contains several functions and scripts to fulfill the Week4 Assignment requirements:
 
 * download_hardata  downloads data from web site and unzips to local data folder
 * merge_hardata     reads training and testing CSV files and merges into one data set
