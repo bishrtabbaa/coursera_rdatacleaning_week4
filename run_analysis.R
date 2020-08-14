@@ -32,7 +32,7 @@ features_hardata <- function() {
   features <- read.table('data/UCI HAR Dataset/features.txt', header=FALSE, col.names=c('id','name'), stringsAsFactors = FALSE)
   mean_std_features <- features[ grep('mean|std', features$name),]
   # cleanup descriptor column
-  mean_std_features$desc <- lapply(X = mean_std_features$name, FUN = function(s) gsub(pattern="()",replacement="",x=s, fixed=TRUE))
+  mean_std_features$desc <- unlist(lapply(X = mean_std_features$name, FUN = function(s) gsub(pattern="()",replacement="",x=s, fixed=TRUE)))
   return (mean_std_features)
 }
 
@@ -58,7 +58,7 @@ calc_mean_hardata <- function(data) {
 
 # 0. run ALL ETL functions in correct sequence
 
-run_analyis_main <- function() {
+run_analysis_main <- function() {
   print('Executing main()...')
   
   download_hardata()
